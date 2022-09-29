@@ -1,0 +1,25 @@
+.button-container {
+  background-color: aliceblue;
+  color: darkslateblue;
+  border-radius: 8px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 16px;
+
+  &:hover {
+    background-color: white;
+    border: 1px solid cornflowerblue;
+  }
+
+  &.disabled {
+    cursor: default;
+    background-color: lightgray;
+
+    &:hover {
+      background-color: lightgray
+    }
+  }
+}

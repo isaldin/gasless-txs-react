@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Web3ReactProvider } from '@web3-react/core';
+import Web3 from 'web3';
 
-function App() {
+import './App.scss';
+import { MainPage } from './pages/main/MainPage';
+import { getSharedWeb3, setSharedWeb3 } from './utils/shared-web3';
+import { BalancesService } from './services/balances';
+
+const getLibrary = (provider: any) => {
+  setSharedWeb3(new Web3(provider));
+  return getSharedWeb3();
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <BalancesService>
+        <MainPage></MainPage>
+      </BalancesService>
+    </Web3ReactProvider>
   );
-}
+};
 
 export default App;

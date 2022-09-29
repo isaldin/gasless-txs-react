@@ -1,6 +1,27 @@
-# Getting Started with Create React App
+## Mint tokens
+get ETH, WETH here: https://faucet.paradigm.xyz/ \
+swap your WETH to DAI here: https://app.uniswap.org/
+
+# About app
+There are 3 chains that you can use for connect: Ethereum, Rinkeby, Goerli.
+
+But sending tokens works only on **Goerli** \
+(Disperse moved to this chain, and Biconomy suggests using Goerli too).
+
+Mainnet and Rinkeby exist only for demonstration of switching chains functionallity \
+(Balances are fetching for each chain separately)
+
+# Remark about gas estimation
+
+I estimated gas with web3js, then added 20%, but txs with user's gas fails on biconomy.
+I didn't spend time for investigation of problem.
+
+## Standard Create React App stuff
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Install deps
+Just run yarn from root of project folder
 
 ## Available Scripts
 
